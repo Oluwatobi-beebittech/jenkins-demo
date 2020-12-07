@@ -15,7 +15,7 @@ pipeline {
       }
       steps {
         sleep 5
-        bat 'echo Success ${BUZZ_NAME}'
+        bat 'echo Success %BUZZ_NAME%'
       }
     }
 
