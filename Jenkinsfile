@@ -10,9 +10,12 @@ pipeline {
 
     stage('Fluffy Test') {
       agent any
+      environment {
+        BUZZ_NAME = 'Worker'
+      }
       steps {
         sleep 5
-        bat 'echo Success'
+        bat 'echo Success ${BUZZ_NAME}'
       }
     }
 
@@ -20,7 +23,6 @@ pipeline {
       agent any
       steps {
         echo 'Placeholder'
-        junit '**/surefire-reports/**/*.xml'
       }
     }
 
