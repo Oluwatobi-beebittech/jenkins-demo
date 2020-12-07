@@ -43,5 +43,11 @@ pipeline {
       }
     }
 
+    stage('Confirm Deployment') {
+      steps {
+        input(message: 'Are you sure yo want to proceed?', ok: 'Yes. Let\'s go!')
+      }
+    }
+
   }
 }
