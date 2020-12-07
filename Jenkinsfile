@@ -11,11 +11,11 @@ pipeline {
     stage('Fluffy Test') {
       agent any
       environment {
-        BUZZ_NAME = 'Worker'
+        BUZZ = 'Worker'
       }
       steps {
         sleep 5
-        bat 'echo Success %BUZZ_NAME%'
+        bat 'echo Success %BUZZ%'
       }
     }
 
