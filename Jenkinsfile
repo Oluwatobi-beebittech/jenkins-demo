@@ -4,14 +4,16 @@ pipeline {
     stage('Fluffy Build') {
       agent any
       steps {
-        echo 'Placeholder'
+        sh 'echo "Another Placeholder"'
       }
     }
 
     stage('Fluffy Test') {
       agent any
       steps {
-        echo 'Placeholder'
+        sh '''sleep 5
+'''
+        sh 'echo "Success"'
       }
     }
 
