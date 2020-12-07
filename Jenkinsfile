@@ -4,16 +4,15 @@ pipeline {
     stage('Fluffy Build') {
       agent any
       steps {
-        sh 'echo Another Placeholder'
+        bat(script: 'echo placeholder', label: 'windows')
       }
     }
 
     stage('Fluffy Test') {
       agent any
       steps {
-        sh '''sleep 5
-'''
-        sh 'echo Success'
+        sleep 5
+        bat 'echo Success'
       }
     }
 
