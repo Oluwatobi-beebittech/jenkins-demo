@@ -2,9 +2,26 @@ pipeline {
   agent any
   stages {
     stage('Fluffy Build') {
-      agent any
-      steps {
-        bat(script: 'echo placeholder', label: 'windows')
+      parallel {
+        stage('Fluffy Build') {
+          agent any
+          steps {
+            bat(script: 'echo placeholder', label: 'windows')
+          }
+        }
+
+        stage('Fluffy Temp Test') {
+          steps {
+            echo 'Hello Temp Test'
+          }
+        }
+
+        stage('Fluffy Temp Test 2') {
+          steps {
+            echo 'Temp Test 2'
+          }
+        }
+
       }
     }
 
