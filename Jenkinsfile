@@ -20,6 +20,7 @@ pipeline {
       agent any
       steps {
         echo 'Placeholder'
+        junit '**/surefire-reports/**/*.xml'
       }
     }
 
